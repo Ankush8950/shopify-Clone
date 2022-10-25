@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+        screens: {
+          sm: "630px",
+          md: "768px",
+          lg: "1080px",
+          xl: "1280px",
+        },
+          extend: {
+            backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            },
+            colors: {
+              myyellow: "#FBF7ED",
+              mygreen:'#008060',
+              mylightgreen: '#004C3F',
+              mydarkgreen:'#002E25',
+              lightesblue: '#F3FCF4',
+              darkblue:'#002E25',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .globalmap{
+        transition: 3.5s;
+        -webkit-transition: 3.5s;
+        -moz-transition: 3.5s;
+        -ms-transition: 3.5s;
+        -o-transition: 3.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .globalmap:hover{
+         transition: 3.5s;
+        -webkit-transition: 3.5s;
+        -moz-transition: 3.5s;
+        -ms-transition: 3.5s;
+        -o-transition: 3.5s;
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    </style>
+
+  </head>
+  <body class="scroll-smooth">
+    <div>
+      <!-- navbar -->
+      <div id="navbar" class="navbar bg-myyellow will-change-scroll flex items-center justify-between pl-[40px] sm:pl-[80px] pr-[40px] sm:pr-[70px] pt-[20px]  fixed top-0 left-0 transition ease-in-out z-10">
+  <div class="flex">
+    <div class="flex items-center justify-center">
+    <img class="w-8" src="/assets/shopify-icon.svg" alt="">
+    <a class="font-bold text-2xl ml-2">Shopify</a>
+    </div>
+    <div id="showpage" class="hidden lg:block ">
+     <ul class="menu menu-horizontal  p-0 flex-none bg-white lg:bg-myyellow w-full lg:w-[auto] pl-[30px] lg:pl-[0px] flex-start lg:flex flex-col lg:flex-row absolute lg:relative left-0
+    top-[0px] lg:top-[auto] items-start lg:items-center justify-center ml-0 lg:ml-5  ">
+      <div class="block lg:hidden w-full flex items-center justify-between pl-[22px] pr-[30px] pt-[40px] lg:pt-[0px]">
+         <div class="flex items-center justify-center">
+         <img class="w-6" src="/assets/shopify-icon.svg" alt="">
+         <a class="font-bold text-xl ml-2">Shopify</a>
+         </div> 
+
+         <div id="closenavbtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+
+         </div>
+      </div>
+    <li tabindex="0">
+        <a class="font-semibold text-lg opacity-80">
+          Start
+          <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-white border border-black-500 shadow-lg z-10 w-[250px] ">
+          <li class="h-[40px]"><a >Start your business</a></li>
+          <div class="w-full h-[1px] bg-black opacity-1 m-2"></div>
+          <li class="h-[40px]"><a>Branding  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li class="h-[40px]"><a>Online Presence  <span class="absolute right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+
+          </span></a></li>
+          <li class="h-[40px]"><a>Store set up <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+        </ul>
+      </li>
+       <li tabindex="0">
+        <a class="font-semibold text-lg opacity-80">
+          Sell
+          <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-base-100 border border-black-500 shadow-lg z-10 w-[270px]">
+          <li class="h-[40px]"><a>Sell everywhere</a></li>
+          <div class="w-full h-[1px] bg-black opacity-1 mt-2"></div>
+          <li  class="h-[40px]"><a>Online Store  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li  class="h-[40px]"><a>Point of sale  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li  class="h-[40px]"><a>Buy button  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li  class="h-[40px]"><a>Checkout  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li  class="h-[40px]"><a>Sales channels  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li  class="h-[40px]"><a>Custom store tools  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+          <li  class="h-[40px]"><a>International commerce  <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </span></a></li>
+        </ul>
+      </li>
+       <li tabindex="0">
+        <a class="font-semibold text-lg opacity-80 hover:no">
+          Market
+          <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-base-100 border border-black-500 shadow-lg">
+          <li class="h-[40px]"><a>Market your business</a></li>
+          <div class="w-full h-[1px] bg-black opacity-1 m-2"></div>
+          <li class="h-[40px]"><a>Email marketing</a></li>
+          <li class="h-[40px]"><a>Marketing automation</a></li>
+          <li class="h-[40px]"><a>Customer groups</a></li>
+          <li class="h-[40px]"><a>Business Chat</a></li>
+          <li class="h-[40px]"><a>Facebook Ads</a></li>
+        </ul>
+      </li>
+       <li tabindex="0">
+        <a class="font-semibold text-lg opacity-80">
+          Manage
+          <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-base-100 border border-black-500 shadow-lg z-10">
+          <li class="h-[40px]"><a>Manage Everything</a></li>
+          <div class="w-full h-[1px] bg-black opacity-1 m-2"></div>
+          <li class="h-[40px]"><a>Ecommerce automation</a></li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+  </div>
+  <div id="show_page" class="flex-none hidden lg:block flex-col lg:flex-row">
+    <ul class="menu menu-horizontal flex-col lg:flex-row absolute lg:relative left-0 top-[276px] lg:top-[auto] bg-white lg:bg-myyellow pl-[30px] lg:pl-[0px] p-0 w-full lg:w-[auto]">
+      <li><a class="font-semibold text-lg opacity-80">Pricing</a></li>
+      <li tabindex="0">
+        <a class="font-semibold text-lg opacity-80">
+          Learn
+          <svg class="fill-current opacity-75" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 w-[250px] bg-base-100 border border-black-500 shadow-lg z-10">
+          <li class="h-[40px]"><a>Help Center <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a> </li>
+          <li class="h-[40px]"><a>Blog <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Business Courses <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Guides <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Shopify Community <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Free tools <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Podcasts <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Business encyclopdia <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Community Events <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+          <li class="h-[40px]"><a>Research <span class="absolute right-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+</svg>
+</span></a></li>
+        </ul>
+      </li>
+      <li class="hidden lg:block"><a class="font-semibold text-lg opacity-80">Log in</a></li>
+    <a class="btn bg-mygreen border-0 hover:bg-mygreen mt-1 ml-3">Try For Free</a>
+    </ul>
+   
+  </div>
+   <div class="lg:hidden" id="menu">
+      <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+
+    </div>
+</div>
+<!-- Home -->
+<div class="bg-myyellow pt-[100px] flex flex-col lg:flex-row items-center justify-between z-[-0]">
+    <div class="w-full lg:w-[600px] pl-[40px] sm:pl-[80px] pr-[40px] sm:pr-[0px] pb-[50px] sm:pb-[30px]">
+      <h1 class="text-mydarkgreen font-bold text-3xl sm:text-5xl leading-snug mt-5 tracking-tight" >The easiest way to sell online in India</h1>
+      <p class="mt-4 font-normal text-lg sm:text-2xl opacity-75 w-[auto] sm:w-[550px]">Try one of the most powerful platforms on the market for free. No technical knowledge needed.</p>
+      <div class="mt-8 flex flex-col sm:flex-row">
+        <input class="h-[45px] w-[auto] sm:w-[350px] border-2  border-black opacity-25 pl-5 font-normal placeholder:text-black placeholder:font-semibold placeholder-slate-400 contrast-more:placeholder-slate-500 rounded-lg" type="text" placeholder="Enter yours email address" >
+    <a class="btn bg-mygreen border-0 hover:bg-mygreen mt-3 sm:mt-0 ml-0 sm:ml-2">Try For Free</a>
+      </div>
+      <p class="mt-5 font-light text-base-content w-[auto] sm:w-[550px]">Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.</p>
+    </div>
+    <div class="w-full h-full lg:w-[600px] lg:h-[550px] relative">
+      <img class="h-full lg:h-[550px]" src="./assets/hero-product-larg.webp" alt="">
+      <div class="bg-gradient-radial from-gray-300 w-full h-full lg:h-[550px] absolute top-0 left-0 "></div>
+    </div>
+</div>
+
+<!-- business online -->
+<div class="bg-mylightgreen pl-[20px] sm:pl-[80px] pr-[30px] sm:pr-[70px]">
+  <div class="pt-[100px]">
+    <h1 class="font-normal text-4xl sm:text-5xl text-white">Bring your business online</h1>
+    <p class="mt-7 text-white font-normal text-base">Create an ecommerce website backed by powerful tools that help you find customers, drive sales, and manage your day-to-day.</p>
+    <div class="mt-5 flex text-center items-center  text-white cursor-pointer">
+      <div class=" hover:mr-3 ease-in-out  duration-300 font-medium text-base sm:text-base">Explore more examples </div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+  </div>
+  <div class="flex w-full  justify-center items-center sm:justify-center flex-wrap sm:flex-nowrap space-x-3 sm:space-x-5 mt-20">
+      <div class="w-[200px] sm:w-[330px]">
+        <img class="w-[200px] sm:w-[250px]"  src="/assets/home-example-large1.webp" alt="">
+        <button class="mt-5 text-white font-normal text-lg lg:text-xl uppercase">Food & Drink</button><br>
+        <button class="text-white font-normal text-base-200 lg:text-lg uppercase">Blue Tokai</button>
+      </div>
+      <div class="w-[200px] sm:w-[330px]">
+        <img class="w-[200px] sm:w-[250px]" src="/assets/home-example-large2.webp" alt="">
+        <button class="mt-5 text-white font-normal text-lg lg:text-xl uppercase">Jewelry</button><br>
+        <button class="text-white font-normal text-base-200 lg:text-lg uppercase">quiksmith</button>
+      </div>
+      <div class="w-[200px] mt-10 sm:mt-0 sm:w-[330px]">
+        <img class="w-[200px] sm:w-[250px]" src="/assets/home-example-large3.webp" alt="">
+        <button class="mt-5 text-white font-normal text-lg lg:text-xl uppercase">Electronics</button><br>
+        <button class="text-white font-normal text-base-200 lg:text-lg uppercase">Crossbeats</button>
+      </div>
+      <div class="w-[200px] sm:w-[330px] mt-10 sm:mt-0 block  sm:hidden lg:block"> 
+        <img class="w-[200px] sm:w-[250px]" src="/assets/home-example-large4.webp" alt="">
+        <button class="mt-5 text-white font-normal text-lg lg:text-xl uppercase">Beauty</button><br>
+        <button class="text-white font-normal text-base-200 lg:text-lg uppercase">Mcaffeine</button>
+      </div>
+      <div class="w-[330px] hidden lg:block">
+        <img class="w-[200px] sm:w-[250px]" src="/assets/home-example-large5.webp" alt="">
+        <button class="mt-5 text-white font-normal text-lg lg:text-xl uppercase">Fashion</button><br>
+        <button class="text-white font-normal text-base-200 lg:text-lg uppercase">Bunaai</button>
+      </div>
+  </div>
+
+  <!-- business section -->
+  <div class="mt-[120px] pb-[80px]">
+    <h1 class="font-normal text-white text-4xl">Take the best path forward</h1>
+    <div class="flex  flex-wrap lg:flex-nowrap mt-10 space-x-0 lg:space-x-5">
+        <div class="w-[500px] md:w-[300px] lg:w-[250px] h-[200px] md:h-[250px]">
+          <div class="w-[50px]">
+            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M5 3H3v2h2V3zm14 4h2v6h-2V9H9v10h4v2H7V7h12zM7 3h2v2H7V3zM5 7H3v2h2V7zm-2 4h2v2H3v-2zm2 4H3v2h2v-2zm6-12h2v2h-2V3zm6 0h-2v2h2V3zm-2 14v-2h6v2h-2v2h-2v2h-2v-4zm4 2v2h2v-2h-2z" fill="#C1F0D0"/> </svg>
+          </div>
+          <h1 class="mt-5 font-medium text-xl text-white">Start an online business</h1>
+          <p class="mt-3 text-white text-base">Create a business, whether you’ve got a fresh idea or are looking for a new way to make money.</p>
+        </div>
+
+        <div class="w-[500px] md:w-[300px] lg:w-[250px] h-[200px] md:h-[250px]">
+          <div class="w-[70px]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C1F0D0" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+            </svg>
+
+          </div>
+          <h1 class="mt-5 font-medium text-xl text-white">Start an online business</h1>
+          <p class="mt-3 text-white text-base">Create a business, whether you’ve got a fresh idea or are looking for a new way to make money.</p>
+        </div>
+        <div  class=" w-[500px] md:w-[300px] lg:w-[250px] h-[200px] md:h-[250px]">
+          <div class="w-[70px]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C1F0D0" class="w-12 h-12">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
+            </svg>
+
+          </div>
+          <h1 class="mt-5 font-medium text-xl text-white">Start an online business</h1>
+          <p class="mt-3 text-white text-base">Create a business, whether you’ve got a fresh idea or are looking for a new way to make money.</p>
+        </div>
+        <div  class="w-[500px] md:w-[300px] lg:w-[250px] h-[200px] md:h-[250px]">
+          <div class="w-[70px] fill[]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C1F0D0" class="w-12 h-12">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+        </svg>
+
+          </div>
+          <h1 class="mt-5 font-medium text-xl text-white">Start an online business</h1>
+          <p class="mt-3 text-white text-base">Create a business, whether you’ve got a fresh idea or are looking for a new way to make money.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="pl-[40px] sm:pl-[80px] pr-[40px] sm:pr-[70px]">
+  <div class="flex flex-col items-center mt-[100px]">
+    <h1 class="font-normal text-4xl text-center">With you wherever you’re going</h1>
+    <p class="text-center mt-3 font-medium text-lg opacity-75">One platform with all the ecommerce and point of sale features <br> you need to start, run, and grow your business.</p>
+  </div>
+<!-- Sell everywhere -->
+  <div class="flex flex-col-reverse lg:flex-row items-center justify-center mt-10">
+    <div class="flex w-full lg:w-[500px] relative">
+    <video id="myvideo"   autoplay>
+    <source src="/assets/video/sell-animation-desktop.mp4" >
+    </video>
+    <div class="absolute bottom-10 right-[-10px]">
+      <button id="playbtn"> <span id="playbtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+</svg></span>
+
+<span id="pausebtn" class="hidden">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+</svg>
+</span>
+
+</button>
+    </div>
+    </div>
+<!-- sell everywhere -->
+    <div class="mt-20 lg:mt-0 ml-0 lg:ml-20 w-full lg:w-[500px]">
+      <h1 class="font-normal text-3xl ">Sell everywhere</h1>
+      <p class="mt-3 font-normal text-base sm:text-lg">Use one platform to sell products to anyone, anywhere—in person with Point of Sale and online through your website, social media, and online marketplaces.</p>
+
+      <div class="mt-5 flex text-center items-center  text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 font-medium text-base sm:text-xl">Explore ways to sell</div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+    </div>
+  </div>
+<!-- market your business -->
+  <div class="flex flex-col lg:flex-row items-center justify-center mt-10">
+    <div class="float-left ml-0 sm:ml-[60px] w-full lg:w-[50%]">
+      <h1 class="font-medium sm:font-normal text-3xl sm:text-4xl">Market your business</h1>
+      <p class="font-normal text-base mt-8">Take the guesswork out of marketing with built-in tools that help you create, execute, and analyze digital marketing campaigns.</p>
+      <div class="mt-5 flex text-center items-center font-semibold text-base sm:text-xl text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 ">Explore how to market your business</div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+    </div>
+    <div class="w-full lg:w-[50%]">
+      <img class="w-full float-right" src="/assets/market-large.webp" alt="">
+    </div>
+  </div>
+
+  <!-- Manage everything -->
+
+  <div class="flex flex-col-reverse lg:flex-row items-center justify-between pt-[50px] pb-[50px]">
+    <div class="pt-[40px] lg:pt-0">
+      <img class="shadow-inner w-full  lg:w-[550px]" src="/assets/shopify-manage.png" alt="">
+    </div>
+    <div class="w-full lg:w-[500px]">
+      <h1 class="font-normal text-2xl">Manage everything</h1>
+      <p class="mt-3 font-normal text-xl opacity-80">Gain the insights you need to grow—use a single dashboard to manage orders, shipping, and payments anywhere you go.</p>
+      <div class="mt-5 flex text-center items-center font-semibold text-base sm:text-xl text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 ">Explore how to manage your business</div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Explore more from Shopify -->
+<div class="bg-lightesblue pl-[40px] sm:pl-[80px] pb-[130px] pr-[40px] sm:pr-[70px]">
+  <h1 class="pt-[100px] font-normal text-3xl text-mydarkgreen">Explore more from Shopify in India</h1>
+  <div class="flex flex-col-reverse md:flex-row mt-[50px] h-[auto]">
+  <div class="w-full md:w-1/2 h-[auto]  bg-white p-[30px]">
+      <h1 class="font-bold text-lg uppercase">start</h1>
+      <h1 class="font-normal text-xl sm:text-3xl mt-3 opacity-100 ">Launch your store with the help of a Shopify Expert</h1>
+      <p class="mt-3 font-normal text-base ms:text-lg leading-1 opacity-75">Find hundreds of experts from India ready to help you get your store up and running, from choosing a theme to building a fully customized site.</p>
+      <div class="mt-5 flex text-center items-center font-semibold text-base sm:text-xl text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 ">Browse Experts in India</div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2">
+    <img class="w-full h-full object-cover	" src="/assets/india-experts-large.webp" alt="">
+  </div>
+  </div>
+
+</div>
+
+<!-- independent business owners everywhere -->
+<div class="pl-[40px] sm:pl-[80px] pr-[40px] sm:pr-[70px] flex flex-col items-center justify-center">
+  <div class="pt-20 float-left w-full">
+  <h1 class="font-medium sm:font-normal text-2xl sm:text-4xl">Empowering independent business <br> owners everywhere</h1>
+  <p class="font-normal text-lg sm:text-3xl mt-5">Millions of businesses in <span class="font-bold text-lg sm:text-3xl"> 175 countries</span> around the world have <br> made over <span class="font-bold text-lg sm:text-3xl"> $496 billion USD  </span> in sales using Shopify.</p>
+ <div class="mt-5 flex text-center items-center font-semibold text-base sm:text-xl text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 ">Learn more about Shopify </div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+</div>
+<div class="w-[350px] sm:w-[500px] h-[h-350px] sm:h-[500px] rounded-full overflow-hidden ">
+    <img class="globalmap items-center" src="/assets/depositphotos-earth.jpg" alt="">
+</div>
+</div>
+
+
+<!-- Alicia page -->
+<div class="pl-[20px] sm:pl-[80px] pr-[20px] sm:pr-[70px]">
+  <div class="flex flex-col md:flex-row">
+  <div class="w-full md:w-1/2 bg-cover bg-center">
+    <img class="w-full h-[300px] sm:h-[400px] md:h-[600px] bg-cover bg-center object-cover	" src="/assets/alicia-souza-testimonial.jpg" alt="">
+  </div>
+  <div class="w-full md:w-1/2 h-[500px] md:h-[600px]  flex flex-col bg-darkblue items-center justify-center p-[20px]">
+    <h1 class="font-medium text-lg lg:text-2xl text-white break-normal text-center w-[300px] sm:w-[320px] md:w-[200px] md:w-[300px] lg:w-[330px]">“Shopify was my knight in shining armor when I exhausted every other possibility of getting my online store up and running. It was stunningly easy to use, with more features and plug-ins that I didn’t even know <br> I wanted.”</h1>
+
+    <img class="w-[200px] mt-10" src="/assets/Icons/logo-alicia-souza-large.avif" alt="">
+    <h1 class="text-white font-medium text-base lg:text-xl mt-10">Alicia | Alicia Souza</h1>
+  </div>
+</div>
+<div class="flex space-y-5 space-x-8 mt-[50px] pb-[50px] flex-wrap	items-center justify-between">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/bajaao-large.webp" alt="">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/johnjacobs-large.png" alt="">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/kylie-large.png" alt="">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/nush-large.webp" alt="">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/yogabar-large.avif" alt="">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/starstruck-large.webp" alt="">
+  <img class="w-[100px] sm:w-[130px] h-[50px]" src="/assets/Icons/mcaffeine-large.webp" alt="">
+</div>
+</div>
+
+
+<!-- Get help you -->
+<div class="flex flex-col md:flex-row h-full overflow-hidden	">
+  <div class="w-full md:w-[800px] lg:w-1/2 pl-[40px] lg:pl-[80px] pr-[30px] lg:pr-[0px] pb-[80px] bg-myyellow space-y-5">
+      <h1 class="font-normal text-5xl mt-20 tracking-tight ">Get the help you need, every step of the way</h1>
+      <div class="flex items-center flex-wrap mt-20 space-y-5">
+         <div class="w-full md:w-[230px] lg:w-[250px]">
+      <h1 class="font-semibold text-base ">Shopify support</h1>
+      <p class="font-normal text-base mt-3">Contact support 24/7, whether you’re troubleshooting issues or looking for business advice.</p>
+         <div class="mt-5 flex text-center items-center  text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 font-medium text-base sm:text-base">Contact support  </div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+    </div>
+
+       <div class="w-full md:w-[230px] lg:w-[250px]">
+      <h1 class="font-semibold text-base">Shopify App Store</h1>
+      <p class="font-normal text-base mt-3">Add features and functionality to your business with 6,000+ apps that integrate directly with Shopify.</p>
+         <div class="mt-5 flex text-center items-center text-mygreen cursor-pointer">
+      <div class="hover:mr-3 ease-in-out  duration-300 font-semibold text-base sm:text-base  ">Visit the Shopify App Store  </div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+    </div>
+
+    <div class="w-full md:w-[auto]">
+      <h1 class="font-semibold text-base ">Shopify Experts Marketplace</h1>
+      <p class="w-full md:w-[270px] font-normal text-base mt-3">Hire a Shopify expert to help you with everything from store setup to SEO.</p>
+         <div class="mt-5 flex text-center items-center  text-mygreen cursor-pointer">
+      <div class=" hover:mr-3 ease-in-out  duration-300 font-medium text-base sm:text-base">Explore the Shopify Experts Marketplace  </div>
+      <span class="ml-2 font-medium"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+    </span>
+    </div>
+    </div>
+      </div>
+  </div>
+
+  <div class="w-full md:w-1/2  h-full 	">
+    <img class=" h-[630px] object-cover	" src="/assets/help.webp" alt="">
+  </div>
+</div>
+
+<!-- Start your business journey -->
+<div class="pt-[100px] pb-[100px] pl-[40px] pr-[40px] relative">
+  <div class="flex flex-col items-center justify-center">
+  <h1 class="font-normal text-center text-3xl">Start your business journey with Shopify</h1>
+  <p class="font-normal text-center text-lg mt-5 mb-4 opacity-80">Try Shopify for free, and explore all the tools and services you need to start, run, and grow your business.</p>
+  <button class="btn bg-mygreen border-0 hover:bg-mygreen">Start free trail</button>
+
+  </div>
+
+  <div id="scrolltopbtn" class="mt-[50px] ">
+    <button class="flex  items-center font-semibold text-base sm:text-xl text-mygreen absolute bottom-[30px] right-[20px] sm:right-[80px] cursor-pointer	">Back to top <span class="ml-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 sm:w-7 h-5 sm:h-7">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+</svg>
+</span></button>
+  </div>
+</div>
+
+<!-- footer section -->
+<div class="bg-mydarkgreen pl-[40px] sm:pl-[60px] lg:pl-[80px] pr-[40px] sm:pr-[60px] lg:pr-[70px]">
+  <div class="flex justify-center lg:justify-start ">
+    <ul class="flex justify-center lg:justify-start  text-white pb-[40px] pt-[40px] flex-wrap md:flex-nowrap ">
+      <li class="mr-5 font-medium text-base md:text-lg"><a href="#">About</a></li>
+      <li class="mr-5 font-medium text-base md:text-lg"><a href="#">Careers </a></li>
+      <li class="mr-5 font-medium text-base md:text-lg"><a href="#">Press and Media </a></li>
+      <li class="mr-5 font-medium text-base md:text-lg"><a href="#">Shopify Plus </a></li>
+      <li class="mr-5 font-medium text-base md:text-lg"><a href="#">Sitemap </a></li>
+    </ul>
+  </div>
+  <div class="w-full h-[2px] bg-white opacity-60"></div>
+
+    <div class="flex flex-wrap lg:flex-nowrap justify-between mt-3 lg:mt-8 pb-8 ">
+      <div>
+        <h1 class="font-bold text-base lg:text-lg text-white">Online Store</h1>
+        <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-2">
+          <div class="w-[auto] sm:w-[140px] lg:w-[180px]">
+        <ul>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Sell Online</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Examples</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Website builder</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Online retail</a></li>
+        </ul>
+        </div>
+        <div class="w-[140px] lg:w-[180px]">
+        <ul>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Ecommerce Website</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Domain names</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Shoping Cart</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Ecommerce hosting</a></li>
+        </ul>
+      </div>
+
+      <div class="w-[140px] lg:w-[180px]">
+        <ul>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Mobile commerce</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Online Store builder</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Dropshipping Business</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Store themes</a></li>
+        </ul>
+      </div>
+        </div>
+      </div>
+
+      <div class="w-[auto] sm:w-[140px] lg:w-[180px] mt-3 lg:mt-0">
+        <h1 class="font-bold text-base lg:text-lg text-white">Point of Sale</h1>
+        <ul>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Point of sell</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Features</a></li>
+        </ul>
+      </div>
+
+      <div class="w-[auto] sm:w-[140px] lg:w-[180px] mt-3 lg:mt-0">
+        <h1 class="font-bold text-base lg:text-lg text-white">Support</h1>
+        <ul>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">24/7 Support</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Shopify Help Center</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Shopify community</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">API documentation</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Free Tools</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Free Stock photos</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Website for sale</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Logo Maker </a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Business name generator</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Research</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Legal</a></li>
+        </ul>
+      </div>
+
+      <div class="w-[auto] sm:w-[140px] lg:w-[180px] mt-3 lg:mt-0">
+        <h1 class="font-bold text-base lg:text-lg text-white">Shopify</h1>
+        <ul>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Contact</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Partner Program</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Affiliate Program</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">App Developers</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Investors</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Blog topics</a></li>
+          <li class="font-normal text-sm lg:text-base mt-2 text-white text-mydarkgreen"><a href="#">Community Events</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class="w-full h-[1px] bg-mygreen opacity-50"></div>
+
+<!-- footer nav -->
+<div class="bg-mydarkgreen pl-[40px] sm:pl-[80px] pr-[40px] sm:pr-[70px] flex flex-col md:flex-row items-center justify-between">
+    <div class="flex flex-wrap  pt-10 pb-3 md:pb-10">
+      <div class="bg-white w-[30px] h-[30px]  p-1 rounded-full mr-1 m-2">
+        <img class="w-[20px]" src="/assets/Icons/Facebook (2).svg" alt="">
+      </div>
+
+      <div class="bg-white w-[30px] h-[30px]  p-1 rounded-full mr-1 m-2">
+        <img class="w-[20px]" src="/assets/Icons/twitter (2).svg" alt="">
+      </div>
+
+      <div class="bg-white w-[30px] h-[30px]  p-1 rounded-full mr-1 m-2">
+        <img class="w-[20px]" src="/assets/Icons/YouTube.svg" alt="">
+      </div>
+
+       <div class="bg-white w-[30px] h-[30px]  p-1 rounded-full mr-1 m-2">
+        <img class="w-[20px]" src="/assets/Icons/instagram (2).svg" alt="">
+      </div>
+
+        <div class="bg-white w-[30px] h-[30px]  p-1 rounded-full mr-1 m-2">
+        <img class="w-[20px]" src="/assets/Icons/linkdin.svg" alt="">
+      </div>
+
+        <div class="bg-white w-[30px] h-[30px]  p-1 rounded-full mr-1 m-2">
+        <img class="w-[20px]" src="/assets/Icons/pinterest.svg" alt="">
+      </div>
+    </div>
+
+    <div class="pt-3 md:pt-10  pb-3 md:pb-10">
+      <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li class="text-white opacity-75 font-normal text-xs sm:text-base lg:text-lg"><a href="#">Terms of Service </a></li>
+      <li class="text-white opacity-75 font-normal text-xs sm:text-base lg:text-lg"><a href="#">Privacy Policy </a></li>
+      <li tabindex="0">
+        <a class="text-white opacity-75 font-normal text-xs sm:text-base lg:text-lg" href="#"> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+</svg>
+</span>
+          India
+          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+      </li>
+    </ul>
+   </div>
+    </div>
+
+</div>
+</div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
