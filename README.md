@@ -10,6 +10,6 @@
 # **Time Taken for this project**
 > I spent roughly around 12 to 14 hours in completing this project, and this is a completely responsive Design.
 
-# 🚀 [LiVE PROJACT LINK](https://statuesque-centaur-5ea6ce.netlify.app/) 
+# 🚀 [LiVE PROJECT LINK](https://statuesque-centaur-5ea6ce.netlify.app/) 
 
 ![shopify clone](/shopifyClone.png)
